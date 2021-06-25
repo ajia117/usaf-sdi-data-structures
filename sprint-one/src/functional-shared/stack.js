@@ -10,7 +10,7 @@ var Stack = function() {
 };
 
 var stackMethods = {
-  /**
+
   // Use an object with numeric keys to store values
 
   // Implement the methods below
@@ -29,10 +29,7 @@ var stackMethods = {
   size: function() {
     return this.currentSize
   }
-  */
+
 };
-stackMethods.push = function(value) {
-  this.storage[this.currentSize] = value;
-  this.currentSize++;
-}
+
 
