@@ -1,7 +1,5 @@
 var Queue = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
-  const newQueue = Object.create(Queue.prototype);
+  var newQueue = Object.create(queueMethods);
   newQueue.startIndex = 0;
   newQueue.endIndex = 0;
   newQueue.storage = {};
@@ -11,20 +9,18 @@ var Queue = function() {
 
 var queueMethods = {};
 
-Queue.prototype.enqueue = function (value) {
-
-  // TODO: impement enqueue
+queueMethods.enqueue = function (value) {
+  this.storage[this.endIndex] = value;
+  this.endIndex++;
+}
+queueMethods.dequeue = function () {
   if(this.startIndex !== this.endIndex) {
     this.startIndex++;
   }
+  return this.storage[this.startIndex-1];
 }
-Queue.prototype.dequeue = function () {
-  // TODO: implement dequeue
-  return true;
-}
-Queue.prototype.size = function () {
-  // TODO: impelment size
-  return true;
+queueMethods.size = function () {
+  return this.endIndex - this.startIndex;
 }
 
 
