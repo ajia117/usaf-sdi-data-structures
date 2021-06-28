@@ -13,13 +13,6 @@ var Queue = function() {
     endIndex++;
   };
 
-  /**
-   * {
-   *    -0: 'a', -
-   *    1: 'b',
-   *    2: 'c'
-   *    size: 3
-   * }*/
   someInstance.dequeue = function() {
     if(startIndex !== endIndex){
       startIndex++;
